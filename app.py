@@ -480,7 +480,7 @@ with tab4:
 
     styled = (filtered[show_cols]
               .sort_values('Date', ascending=False)
-              .style.applymap(color_level, subset=['behavior_level']))
+              .style.map(color_level, subset=['behavior_level']))
     st.dataframe(styled, use_container_width=True, height=500)
 
     csv = filtered[show_cols].to_csv(index=False).encode('utf-8')
